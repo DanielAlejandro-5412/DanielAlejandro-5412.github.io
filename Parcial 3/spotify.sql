@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2024 a las 20:56:57
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Tiempo de generación: 05-06-2024 a las 02:50:20
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,7 +32,7 @@ CREATE TABLE `artista` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripcion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `artista`
@@ -59,7 +60,7 @@ CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artista_id` int(11) NOT NULL,
   `canciones_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ CREATE TABLE `canciones` (
   `fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `canciones`
@@ -83,13 +84,46 @@ CREATE TABLE `canciones` (
 
 INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
 (1, 'Five night\'s at freddy\'s 1 song', 7, '02:58:00', '0000-00-00', 1, 'fnaf 1'),
-(2, 'its been so long', 7, '03:00:00', '0000-00-00', 1, ''),
-(3, 'Die in a fire ', 7, '03:06:00', '0000-00-00', 0, ''),
-(4, 'I got no time', 7, '02:48:00', '0000-00-00', 0, ''),
-(5, 'I can\'t fix you', 7, '05:06:00', '0000-00-00', 0, ''),
-(6, 'You Can\'t hide', 7, '04:48:00', '0000-00-00', 0, ''),
-(7, 'after show', 7, '03:53:00', '0000-00-00', 0, ''),
-(8, 'STUCK INSIDE', 7, '02:53:00', '0000-00-00', 0, '');
+(2, 'It\'s been so long', 7, '03:00:00', '0000-00-00', 1, ''),
+(3, 'Die in a fire ', 7, '03:06:00', '0000-00-00', 1, ''),
+(4, 'I got no time', 7, '02:48:00', '0000-00-00', 1, ''),
+(5, 'I can\'t fix you', 7, '05:06:00', '0000-00-00', 1, ''),
+(6, 'You Can\'t hide', 7, '04:48:00', '0000-00-00', 1, ''),
+(7, 'After show', 7, '03:53:00', '0000-00-00', 1, ''),
+(8, 'STUCK INSIDE', 7, '02:53:00', '2024-04-03', 1, ''),
+(9, 'Never be alone', 7, '03:20:00', '2016-01-23', 1, ''),
+(10, 'it\'s me', 6, '03:44:00', '2015-03-03', 1, ''),
+(11, 'Stay calm', 5, '03:01:00', '2015-03-08', 1, ''),
+(12, 'they\'ll find you', 7, '03:44:00', '2015-03-23', 1, ''),
+(13, 'creppin\' Towards the Door', 5, '02:31:00', '2015-07-12', 1, ''),
+(14, 'Below the Surface', 7, '02:14:00', '2016-10-13', 1, ''),
+(15, 'Just Gold', 2, '02:59:00', '2014-06-13', 1, ''),
+(16, 'Survive the Night', 1, '06:06:00', '2015-07-13', 1, ''),
+(17, 'Break My Mind', 2, '03:37:00', '2016-08-26', 1, ''),
+(18, 'Mangled', 2, '04:16:00', '2018-01-02', 1, ''),
+(19, 'Just an Attraction', 2, '03:00:00', '2015-10-23', 1, ''),
+(20, 'Join Us for a Bite', 1, '04:37:00', '2016-02-22', 1, ''),
+(21, 'Dance to Forget', 7, '04:12:00', '2017-03-03', 1, ''),
+(22, 'Foxy\'s Song', 2, '02:40:00', '2015-03-29', 1, ''),
+(23, 'The Puppet Song', 2, '03:37:00', '2015-10-23', 1, ''),
+(24, 'Halloween at Freddy\'s', 2, '02:57:00', '2015-10-23', 1, ''),
+(25, 'Noticed', 7, '03:38:00', '2016-07-13', 1, ''),
+(26, 'I\'m the Purple Guy', 2, '03:39:00', '2015-08-26', 1, ''),
+(27, 'The Show Must Go On', 7, '03:38:00', '2015-07-13', 1, ''),
+(28, 'Left Behind', 2, '03:37:00', '2016-06-25', 1, ''),
+(29, 'Welcome Back', 7, '04:34:00', '2016-05-11', 1, ''),
+(30, 'Our Little Horror Story', 7, '03:35:00', '2015-03-15', 1, ''),
+(31, 'Labyrinth', 7, '03:38:00', '2017-12-17', 1, ''),
+(32, 'FNAF World Song', 2, '03:10:00', '2016-02-11', 1, ''),
+(33, 'Gospel of Dismay', 2, '03:26:00', '2017-06-24', 1, ''),
+(34, 'Drawkill Song', 2, '03:37:00', '2015-06-15', 1, ''),
+(35, 'Nightmare', 7, '03:35:00', '2015-06-02', 1, ''),
+(36, 'March Onward to Your Nightmare', 7, '03:02:00', '2015-09-17', 1, ''),
+(37, 'You Belong Here', 7, '03:18:00', '2016-10-16', 1, ''),
+(38, 'Hide and Seek', 7, '03:27:00', '2017-05-17', 1, ''),
+(39, 'Unfixable', 8, '04:00:00', '2016-10-15', 1, ''),
+(40, 'No More Cake', 7, '02:51:00', '2018-02-27', 1, ''),
+(41, 'Blood and Tears', 7, '03:40:00', '2016-10-28', 1, '');
 
 -- --------------------------------------------------------
 
@@ -101,7 +135,7 @@ CREATE TABLE `favoritos` (
   `id` int(11) NOT NULL,
   `canciones_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -112,7 +146,7 @@ CREATE TABLE `favoritos` (
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -138,7 +172,7 @@ CREATE TABLE `membresías` (
   `id` int(11) NOT NULL,
   `descrpcion` varchar(100) NOT NULL,
   `precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `membresías`
@@ -165,7 +199,7 @@ CREATE TABLE `playlists` (
   `descripcion` varchar(100) NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -178,7 +212,7 @@ CREATE TABLE `playlist_canciones` (
   `playlists_id` int(11) NOT NULL,
   `canciones_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -191,7 +225,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `membrecia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -297,7 +331,7 @@ ALTER TABLE `artistas_canciones`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
