@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2024 a las 03:44:40
+-- Tiempo de generación: 12-06-2024 a las 03:05:59
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -62,6 +62,13 @@ CREATE TABLE `artistas_canciones` (
   `canciones_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `artistas_canciones`
+--
+
+INSERT INTO `artistas_canciones` (`id`, `artista_id`, `canciones_id`) VALUES
+(1, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -92,7 +99,38 @@ INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `acti
 (7, 'After show', 7, '03:53:00', '0000-00-00', 1, ''),
 (8, 'STUCK INSIDE', 7, '02:53:00', '2024-04-03', 1, ''),
 (9, 'Never be alone', 7, '03:20:00', '2016-01-23', 1, ''),
-(10, 'it\'s me', 6, '03:44:00', '2015-03-03', 1, '');
+(10, 'it\'s me', 6, '03:44:00', '2015-03-03', 1, ''),
+(11, 'Stay calm', 5, '03:01:00', '2015-03-08', 1, ''),
+(12, 'they\'ll find you', 7, '03:44:00', '2015-03-23', 1, ''),
+(13, 'creppin\' Towards the Door', 5, '02:31:00', '2015-07-12', 1, ''),
+(14, 'Below the Surface', 7, '02:14:00', '2016-10-13', 1, ''),
+(15, 'Just Gold', 2, '02:59:00', '2014-06-13', 1, ''),
+(16, 'Survive the Night', 1, '06:06:00', '2015-07-13', 1, ''),
+(17, 'Break My Mind', 2, '03:37:00', '2016-08-26', 1, ''),
+(18, 'Mangled', 2, '04:16:00', '2018-01-02', 1, ''),
+(19, 'Just an Attraction', 2, '03:00:00', '2015-10-23', 1, ''),
+(20, 'Join Us for a Bite', 1, '04:37:00', '2016-02-22', 1, ''),
+(21, 'Dance to Forget', 7, '04:12:00', '2017-03-03', 1, ''),
+(22, 'Foxy\'s Song', 2, '02:40:00', '2015-03-29', 1, ''),
+(23, 'The Puppet Song', 2, '03:37:00', '2015-10-23', 1, ''),
+(24, 'Halloween at Freddy\'s', 2, '02:57:00', '2015-10-23', 1, ''),
+(25, 'Noticed', 7, '03:38:00', '2016-07-13', 1, ''),
+(26, 'I\'m the Purple Guy', 2, '03:39:00', '2015-08-26', 1, ''),
+(27, 'The Show Must Go On', 7, '03:38:00', '2015-07-13', 1, ''),
+(28, 'Left Behind', 2, '03:37:00', '2016-06-25', 1, ''),
+(29, 'Welcome Back', 7, '04:34:00', '2016-05-11', 1, ''),
+(30, 'Our Little Horror Story', 7, '03:35:00', '2015-03-15', 1, ''),
+(31, 'Labyrinth', 7, '03:38:00', '2017-12-17', 1, ''),
+(32, 'FNAF World Song', 2, '03:10:00', '2016-02-11', 1, ''),
+(33, 'Gospel of Dismay', 2, '03:26:00', '2017-06-24', 1, ''),
+(34, 'Drawkill Song', 2, '03:37:00', '2015-06-15', 1, ''),
+(35, 'Nightmare', 7, '03:35:00', '2015-06-02', 1, ''),
+(36, 'March Onward to Your Nightmare', 7, '03:02:00', '2015-09-17', 1, ''),
+(37, 'You Belong Here', 7, '03:18:00', '2016-10-16', 1, ''),
+(38, 'Hide and Seek', 7, '03:27:00', '2017-05-17', 1, ''),
+(39, 'Unfixable', 8, '04:00:00', '2016-10-15', 1, ''),
+(40, 'No More Cake', 7, '02:51:00', '2018-02-27', 1, ''),
+(41, 'Blood and Tears', 7, '03:40:00', '2016-10-28', 1, '');
 
 -- --------------------------------------------------------
 
@@ -105,6 +143,22 @@ CREATE TABLE `favoritos` (
   `canciones_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `favoritos`
+--
+
+INSERT INTO `favoritos` (`id`, `canciones_id`, `usuarios_id`) VALUES
+(1, 2, 1),
+(2, 9, 6),
+(3, 7, 2),
+(4, 3, 4),
+(5, 39, 9),
+(6, 6, 7),
+(7, 1, 4),
+(8, 26, 8),
+(9, 4, 10),
+(10, 11, 5);
 
 -- --------------------------------------------------------
 
@@ -170,6 +224,24 @@ CREATE TABLE `playlists` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `playlists`
+--
+
+INSERT INTO `playlists` (`id`, `nombre`, `duracion`, `total_canciones`, `descripcion`, `activo`, `usuario_id`) VALUES
+(1, 'Maraton de FNAF', '02:35:18', 40, 'Para disfrutar un buen rato de FNAF', 1, 1),
+(2, 'ponte unas Rolas insecto', '00:56:30', 22, 'Para disfrutar mientras juego al genshin impact', 1, 2),
+(4, 'Rock and Monty', '00:23:18', 7, 'Cantaremos junto a Monty un rato', 1, 3),
+(5, 'Relajantes y clasicas', '00:34:59', 13, 'Un buen rato de nostalgia y calma', 1, 4),
+(6, 'Y CANTAREMOS TODA LA NOCHE ASTA LAS 6:00AM !!!', '06:18:59', 138, 'De 12 am a 6 am', 1, 10),
+(7, 'FNAF', '00:30:00', 8, 'Solo por mi hijo', 1, 9),
+(8, 'Canciones del oso Alfredo', '01:17:00', 27, 'Pa investigar en FNAF', 0, 6),
+(9, 'tHE LIVING TOM', '00:29:07', 9, 'De mi artista de fnaf fav', 1, 4),
+(10, 'Para dibujar y reljarme', '04:39:00', 86, 'Para escuchar musica del buen oso ALfredo mientras dibujo, me encanta', 1, 1),
+(11, 'Amor y odio', '00:31:54', 10, 'me gustan y no, ¿Por qué no quito las q no me gustan]?, fácil: me da flojera', 1, 5),
+(12, 'Musica de Five night\'s at Freddy\'s', '02:11:28', 21, 'Un Alumno me las recomendó', 1, 8),
+(13, 'Mi playlist de fnaf :)', '00:48:03', 16, 'Para disfrutar de este maravilloso juego', 1, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -182,6 +254,25 @@ CREATE TABLE `playlist_canciones` (
   `canciones_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `playlist_canciones`
+--
+
+INSERT INTO `playlist_canciones` (`id`, `playlists_id`, `canciones_id`, `usuarios_id`) VALUES
+(1, 11, 16, 4),
+(2, 8, 1, 6),
+(3, 7, 2, 9),
+(4, 1, 39, 1),
+(5, 6, 20, 10),
+(6, 13, 22, 10),
+(7, 4, 39, 3),
+(8, 12, 5, 8),
+(9, 10, 11, 1),
+(10, 9, 6, 5),
+(11, 2, 7, 2),
+(12, 5, 31, 2),
+(13, 4, 26, 1);
 
 -- --------------------------------------------------------
 
@@ -294,19 +385,19 @@ ALTER TABLE `artista`
 -- AUTO_INCREMENT de la tabla `artistas_canciones`
 --
 ALTER TABLE `artistas_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
@@ -324,13 +415,13 @@ ALTER TABLE `membresías`
 -- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist_canciones`
 --
 ALTER TABLE `playlist_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
