@@ -16,9 +16,27 @@
                 <h4>Consulta #1. Obtener listado de todos los Alumnos de la facultad</h4>
                 <h3 class="card" style="background-color: paleturquoise;">SELECT * FROM Alumno;</h3><hr>
                 <img src="imagenes/captura.png" alt="img-fluid"><hr>
+
                 <h4>Consulta #2. Obtener el listado de cursos y las asignaturas de la base de datos</h4><hr>
-                <h3 style="color: darkorchid;">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
-                <img src="imagenes/Captura de pantalla (4).png" alt="">
+                <h3 style="color: darkorchid;">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3><br>
+                <img src="imagenes/Captura de pantalla (4).png" alt=""><hr>
+
+                <h4>Consulta #3. OBTENER LISTADO (NOMBRE Y APELLIDO) DE ALUMNOS QUE TENGAN BECA</h4><br>
+                <h3>SELECT alumno.nombre,apellido1,apellido2 FROM alumno WHERE beca LIKE 'si';</h3><br>
+                <img src="imagenes/consulta #3.png" alt=""><hr>
+
+                <h4>Consulta #4. OBTENER LISTADO DE PROFESORES (NOMBRE Y APELLIDO) Y SU NUMERO DE CONTACTO</h4><br>
+                <h3>SELECT profesor.nombre,apellido1, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h3><br>
+                <img src="imagenes/Consulta #4.png" alt=""><hr>
+
+                <h4>Consulta #5. OBTENER LISTADO DE ALUMNOS (TODOS LOS CAMPOS) QUE ESTAN INSCRITOS A LA ASIGNATURA DE PROGRAMACION</h4><br>
+                <h3>SELECT * FROM alumno INNER JOIN asignatura ON asignatura.idAsignatura LIKE "AS009";</h3>
+                <img src="imagenes/Consulta #5.png" alt="">
+
+                <h4>Consulta #6. OBTENER LISTADO DE PROFESORES Y ASIGNATURAS QUE IMPARTEN</h4><br>
+                <h3></h3>
+                <img src="" alt="">
+
              </div>
         </div>
     </div>
