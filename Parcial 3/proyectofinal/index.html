@@ -37,22 +37,23 @@
                 <h3>SELECT profesor.nombre, asignatura.nombre FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor INNER JOIN asignatura ON impartir.idAsignatura=asignatura.idAsignatura</h3>
                 <img src="imagenes/Consulta #6.png" alt="">
 
-                <h4>Consulta #7.</h4><br>
-                <h3></h3>
+                <h4>Consulta #7. MOSTRAR LA ASIGNATURA QUE TIENE MAS ALUMNOS INSCRITOS Y SU TOTAL</h4><br>
+                <h3>SELECT asignatura.nombre, COUNT(matricula.idAlumno) AS TOT_ins FROM asignatura JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.nombre ORDER BY TOT_ins DESC</h3>
                 <img src="" alt="">
 
-                <h4>Consulta #8.</h4><br>
-                <h3></h3>
+                <h4>Consulta #8. OBTENER LISTADO DE ALUMNOS QUE LES DA CLASE EL PROFESOR CON ID PR048 (JOSE MANUEL), SIN IMPORTAR EN QUE ASIGNATURAS ESTE INSCRITO</h4><br>
+                <h3>SELECT alumno.nombre, profesor.nombre FROM alumno INNER JOIN profesor INNER JOIN impartir ON impartir.idProfesor="PR048"  INNER JOIN matricula ON impartir.idAsignatura;</h3>
                 <img src="" alt="">
 
 
-                <h4>Consulta #9.</h4><br>
-                <h3></h3>
-                <img src="" alt="">
+                <h4>Consulta #9. OBTENER LISTADO DE CURSOS, CON ASIGNATURA, Y EL MAESTRO QUE LAS IMPARTE</h4><br>
+                <h3>SELECT curso.nombreDescriptivo AS "curso", asignatura.nombre AS "asignatura", profesor.nombre AS "profesor" FROM curso INNER JOIN asignatura ON asignatura.curso=curso.idCurso INNER JOIN profesor ON asignatura.coordinador=profesor.idProfesor;</h3>
+                <img src="imagenes/Consulta #9.png" alt="">
 
-                <h4>Consulta #10.</h4><br>
-                <h3></h3>
-                <img src="" alt="">
+                <h4>Consulta #10. OBTENER LISTADO DE ALUMNOS, CON ASIGNATURA QUE CURSA, PROFESORQUE LA IMPARTE, Y CURSO AL QUE PERTENECE</h4><br>
+                <h3>SELECT alumno.nombre, asignatura.nombre, profesor.nombre, curso.nombreDescriptivo FROM alumno INNER JOIN matricula ON alumno.idAlumno=matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura=asignatura.idAsignatura INNER JOIN impartir ON impartir.idAsignatura=asignatura.idasignatura INNER JOIN profesor ON impartir.idProfesor=profesor.idProfesor INNER JOIN curso ON curso.idCurso=asignatura.curso;</h3>
+                <img src="imagenes/Practica #10.png" alt="">
+
 
 
              </div>
