@@ -39,11 +39,11 @@
 
                 <h4>Consulta #7. MOSTRAR LA ASIGNATURA QUE TIENE MAS ALUMNOS INSCRITOS Y SU TOTAL</h4><br>
                 <h3>SELECT asignatura.nombre, COUNT(matricula.idAlumno) AS TOT_ins FROM asignatura JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.nombre ORDER BY TOT_ins DESC</h3>
-                <img src="" alt="">
+                <img src="imagenes/consulta #7.png" alt="">
 
                 <h4>Consulta #8. OBTENER LISTADO DE ALUMNOS QUE LES DA CLASE EL PROFESOR CON ID PR048 (JOSE MANUEL), SIN IMPORTAR EN QUE ASIGNATURAS ESTE INSCRITO</h4><br>
-                <h3>SELECT alumno.nombre, profesor.nombre FROM alumno INNER JOIN profesor INNER JOIN impartir ON impartir.idProfesor="PR048"  INNER JOIN matricula ON impartir.idAsignatura;</h3>
-                <img src="" alt="">
+                <h3>SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura</h3>
+                <img src="imagenes/consulta #8.png" alt="">
 
 
                 <h4>Consulta #9. OBTENER LISTADO DE CURSOS, CON ASIGNATURA, Y EL MAESTRO QUE LAS IMPARTE</h4><br>
