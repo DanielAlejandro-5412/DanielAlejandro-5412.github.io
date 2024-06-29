@@ -10,55 +10,56 @@
 <body style="background-color: mediumpurple;">
     <h1 style="color: lightskyblue;">Proyecto final parcial 3</h1><br>
     <h3 style="color: lightskyblue;">De Daniel Alejandro</h3><hr>
+    <a href="Proyecto bonito.html", style="color: cyan;">Variacion de el mismo proyecto pero con algunos retoques</a><br>
     <div class="container">
         <div class="row">
              <div class="col">
                 <h4>Consulta #1. Obtener listado de todos los Alumnos de la facultad</h4>
                 <h3 class="card" style="background-color: paleturquoise;">SELECT * FROM Alumno;</h3><hr>
-                <img src="imagenes/captura.png" alt="img-fluid"><hr>
+                <img src="imagenes/captura.png" alt="img-fluid" width="100%"><hr>
 
                 <h4>Consulta #2. Obtener el listado de cursos y las asignaturas de la base de datos</h4><hr>
                 <h3 style="color: darkorchid;">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3><br>
-                <img src="imagenes/Captura de pantalla (4).png" alt=""><hr>
+                <img src="imagenes/Captura de pantalla (4).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #3. OBTENER LISTADO (NOMBRE Y APELLIDO) DE ALUMNOS QUE TENGAN BECA</h4><br>
                 <h3>SELECT alumno.nombre,apellido1,apellido2 FROM alumno WHERE beca LIKE 'si';</h3><br>
-                <img src="imagenes/consulta #3.png" alt=""><hr>
+                <img src="imagenes/Captura de pantalla (575).png" alt="img-fluid" width="100%"><hr>
 
                 <h4>Consulta #4. OBTENER LISTADO DE PROFESORES (NOMBRE Y APELLIDO) Y SU NUMERO DE CONTACTO</h4><br>
                 <h3>SELECT profesor.nombre,apellido1, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h3><br>
-                <img src="imagenes/Consulta #4.png" alt=""><hr>
+                <img src="imagenes/Captura de pantalla (576).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #5. OBTENER LISTADO DE ALUMNOS (TODOS LOS CAMPOS) QUE ESTAN INSCRITOS A LA ASIGNATURA DE PROGRAMACION</h4><br>
                 <h3>SELECT * FROM alumno INNER JOIN asignatura ON asignatura.idAsignatura LIKE "AS009";</h3>
-                <img src="imagenes/Consulta #5.png" alt="">
+                <img src="imagenes/Captura de pantalla (577).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #6. OBTENER LISTADO DE PROFESORES Y ASIGNATURAS QUE IMPARTEN</h4><br>
                 <h3>SELECT profesor.nombre, asignatura.nombre FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor INNER JOIN asignatura ON impartir.idAsignatura=asignatura.idAsignatura</h3>
-                <img src="imagenes/Consulta #6.png" alt="">
+                <img src="imagenes/Captura de pantalla (578).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #7. MOSTRAR LA ASIGNATURA QUE TIENE MAS ALUMNOS INSCRITOS Y SU TOTAL</h4><br>
                 <h3>SELECT asignatura.nombre, COUNT(matricula.idAlumno) AS TOT_ins FROM asignatura JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.nombre ORDER BY TOT_ins DESC</h3>
-                <img src="imagenes/consulta #7.png" alt="">
+                <img src="imagenes/Captura de pantalla (580).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #8. OBTENER LISTADO DE ALUMNOS QUE LES DA CLASE EL PROFESOR CON ID PR048 (JOSE MANUEL), SIN IMPORTAR EN QUE ASIGNATURAS ESTE INSCRITO</h4><br>
                 <h3>SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura</h3>
-                <img src="imagenes/consulta #8.png" alt="">
+                <img src="imagenes/Captura de pantalla (582).png" alt="" width="100%"><hr>
 
 
                 <h4>Consulta #9. OBTENER LISTADO DE CURSOS, CON ASIGNATURA, Y EL MAESTRO QUE LAS IMPARTE</h4><br>
                 <h3>SELECT curso.nombreDescriptivo AS "curso", asignatura.nombre AS "asignatura", profesor.nombre AS "profesor" FROM curso INNER JOIN asignatura ON asignatura.curso=curso.idCurso INNER JOIN profesor ON asignatura.coordinador=profesor.idProfesor;</h3>
-                <img src="imagenes/Consulta #9.png" alt="">
+                <img src="imagenes/Captura de pantalla (583).png" alt="" width="100%"><hr>
 
                 <h4>Consulta #10. OBTENER LISTADO DE ALUMNOS, CON ASIGNATURA QUE CURSA, PROFESORQUE LA IMPARTE, Y CURSO AL QUE PERTENECE</h4><br>
                 <h3>SELECT alumno.nombre, asignatura.nombre, profesor.nombre, curso.nombreDescriptivo FROM alumno INNER JOIN matricula ON alumno.idAlumno=matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura=asignatura.idAsignatura INNER JOIN impartir ON impartir.idAsignatura=asignatura.idasignatura INNER JOIN profesor ON impartir.idProfesor=profesor.idProfesor INNER JOIN curso ON curso.idCurso=asignatura.curso;</h3>
-                <img src="imagenes/Practica #10.png" alt="">
-
-
+                <img src="imagenes/Captura de pantalla (581).png" alt="" width="100%"><hr>
 
              </div>
         </div>
     </div>
+
+    <h2>López Martínez Daniel Alejandro 4AVP</h2>
 
     <script src="js/bootstrap.js"></script>
 </body>

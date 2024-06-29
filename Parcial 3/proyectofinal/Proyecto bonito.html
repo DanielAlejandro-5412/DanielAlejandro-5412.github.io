@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final #3</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.7.1.js"></script>
+</head>
+<body style="background-color: mediumpurple;">
+    <h1 style="color: lightskyblue;">Proyecto final parcial 3</h1><br>
+    <h3 style="color: lightskyblue;">De Daniel Alejandro</h3><hr>
+    <a href="index.html", style="color: cyan;">Para regresar al original</a><br>
+    <div class="container">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" aria-label="Slide 8"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="8" aria-label="Slide 9"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="imagenes/captura.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4 style="color: rgb(0, 0, 0);">Consulta #1. Obtener listado de todos los Alumnos de la facultad</h4>
+                  <p style="color: black;">SELECT * FROM Alumno;</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="imagenes/Captura de pantalla (4).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4 style="color: rgb(0, 0, 0);">Consulta #2. Obtener el listado de cursos y las asignaturas de la base de datos</h4>
+                  <p style="color: black;">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (575).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #3. OBTENER LISTADO (NOMBRE Y APELLIDO) DE ALUMNOS QUE TENGAN BECA</h5>
+                  <p>SELECT alumno.nombre,apellido1,apellido2 FROM alumno WHERE beca LIKE 'si'</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (576).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #4. OBTENER LISTADO DE PROFESORES (NOMBRE Y APELLIDO) Y SU NUMERO DE CONTACTO</h5>
+                  <p>SELECT profesor.nombre,apellido1, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (577).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #5. OBTENER LISTADO DE ALUMNOS (TODOS LOS CAMPOS) QUE ESTAN INSCRITOS A LA ASIGNATURA DE PROGRAMACION</h5>
+                  <p>SELECT * FROM alumno INNER JOIN asignatura ON asignatura.idAsignatura LIKE "AS009"</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (578).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #6. OBTENER LISTADO DE PROFESORES Y ASIGNATURAS QUE IMPARTEN</h5>
+                  <p>SELECT profesor.nombre, asignatura.nombre FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor INNER JOIN asignatura ON impartir.idAsignatura=asignatura.idAsignatura</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (580).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #7. MOSTRAR LA ASIGNATURA QUE TIENE MAS ALUMNOS INSCRITOS Y SU TOTAL</h5>
+                  <p>SELECT asignatura.nombre, COUNT(matricula.idAlumno) AS TOT_ins FROM asignatura JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.nombre ORDER BY TOT_ins DESC</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (582).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #8. OBTENER LISTADO DE ALUMNOS QUE LES DA CLASE EL PROFESOR CON ID PR048 (JOSE MANUEL), SIN IMPORTAR EN QUE ASIGNATURAS ESTE INSCRITO</h5>
+                  <p>SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (583).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #9. OBTENER LISTADO DE CURSOS, CON ASIGNATURA, Y EL MAESTRO QUE LAS IMPARTE</h5>
+                  <p>SELECT curso.nombreDescriptivo AS "curso", asignatura.nombre AS "asignatura", profesor.nombre AS "profesor" FROM curso INNER JOIN asignatura ON asignatura.curso=curso.idCurso INNER JOIN profesor ON asignatura.coordinador=profesor.idProfesor</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Captura de pantalla (581).png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Consulta #10. OBTENER LISTADO DE ALUMNOS, CON ASIGNATURA QUE CURSA, PROFESORQUE LA IMPARTE, Y CURSO AL QUE PERTENECE</h5>
+                  <p>SELECT alumno.nombre, asignatura.nombre, profesor.nombre, curso.nombreDescriptivo FROM alumno INNER JOIN matricula ON alumno.idAlumno=matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura=asignatura.idAsignatura INNER JOIN impartir ON impartir.idAsignatura=asignatura.idasignatura INNER JOIN profesor ON impartir.idProfesor=profesor.idProfesor INNER JOIN curso ON curso.idCurso=asignatura.curso;</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+<div style="text-align: center;">
+    <img src="imagenes/5cd12dc76f44c4b5a1e0b3126e076b27.gif" alt="" >
+</div>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
