@@ -1,0 +1,11 @@
+@font-face {
+    font-family: fuente_de_fnaf;
+    src: url("OCR-A\ Regular.ttf");
+}
+h1{
+    text-align: center;
+    margin-top: 20%;
+}
+body{
+    font-family: fuente_de_fnaf;
+}

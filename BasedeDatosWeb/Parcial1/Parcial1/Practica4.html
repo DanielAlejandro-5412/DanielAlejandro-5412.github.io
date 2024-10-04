@@ -1,0 +1,120 @@
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen en línea</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="Practica4.css">
+</head>
+<body style="background-image: url(Gif/estatica.gif);">  
+    <div class="container">
+        <form action="practica4.php" method="POST">
+            <div class="row">
+                <h1 style="color: white;">Eres fan por moda?🤨</h1><hr>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        1. ¿En que año fue lanzado el primer juego de FNAF?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta1" value="HTML" required, onmousedown="sonido.play()"> 2012 </p>
+                            <p><input type="radio" name="pregunta1" value="SQL" required> 2014 </p>
+                            <p><input type="radio" name="pregunta1" value="PHP" required > 1993 </p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        2. Quienes fueron los creadores de Fredbear's Family Dinner?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta2[]" value="william afton" > William Afton </p>
+                            <p><input type="checkbox" name="pregunta2[]" value="michael afton" > Michael Afton </p>
+                            <p><input type="checkbox" name="pregunta2[]" value="henry emily" > Henry Emily </p>
+                            <p><input type="checkbox" name="pregunta2[]" value="fazbear entretaiment"> Fazbear Entretaiment </p>
+                        </div>
+                    </div>
+                    <div class="card p-4 mb-4">
+                        <p>
+                            3. Mañana sera <input type="text" name="pregunta2" value="" required> 
+                        </p>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        4. ¿Por que los animatronicos de fnaf 1 nos quieren meter a un traje?
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta4" value="porque pueden pensar que somnos un endoesqueleto" required> Porque pueden pensar que somnos un endoesqueleto </p>
+                            <p><input type="radio" name="pregunta4" value="porque les apetece, porque pueden y porque quieren" required> Porque les apetece, porque pueden y porque quieren </p>
+                            <p><input type="radio" name="pregunta4" value="tienen un plan para atrapar nuestro espiritu en el traje" required > Tienen un plan para atrapar njestro espirito en el traje </p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                        5. Que son los nightmare en fnaf 4?
+                        </div>
+                        <div class="card-body"> 
+                            <p><input type="radio" name="pregunta4" value="son los amigos de michael con mascaras" required> Son los amigos de Michael con mascaras </p>
+                            <p><input type="radio" name="pregunta4" value="son maniquies alterados por gas" required> Son maniquies alterados por gas </p>
+                            <p><input type="radio" name="pregunta4" value="son endoesqueletos alterados con discos ilusorios" required > Son endoesqueletos alterados con discos ilusorios </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-4 mb-4">
+                        <p>
+                            6. RWQFSFASXC: <input type="text" name="pregunta5" value="" required> NAME!.
+                        </p>
+                    </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                7. Que gama de animatronicos son los que aparecen en FNAF 2?
+                </div>
+                <div class="card-body">
+                    <p><input type="checkbox" name="pregunta7[]" value="classic"> Classic </p>
+                    <p><input type="checkbox" name="pregunta7[]" value="toy"> Toy </p>
+                    <p><input type="checkbox" name="pregunta7[]" value="funtime"> Funtime </p>
+                    <p><input type="checkbox" name="pregunta7[]" value="old/withered"> Old/Withered </p>
+                    <p><input type="checkbox" name="pregunta7[]" value="glamrock"> Glamrock </p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                8. Que phanpoms te arruinan la ventilación en fnaf3?
+                </div>
+                <div class="card-body">
+                    <p><input type="radio" name="pregunta8" value="todos" required> Todos</p>
+                            <p><input type="radio" name="pregunta8" value="phantom freddy, phantom chica, phantom foxy, phantom bb, phantom puppet" required> Phantom Freddy, Phantom Chica, Phantom Foxy, Phantom BB, Phantom Mangle </p>
+                            <p><input type="radio" name="pregunta8" value="phanton freddy, phantom mangle, phantom chica, phantom foxy, phantom bb" required> Phanton Freddy, Phantom Puppet, Phantom Chica, Phantom Foxy, Phantom BB </p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+            9. Quien nos habla al comienzo de las noches de FNAF SL?
+                </div>
+                <div class="card-body">
+                    <p><input type="radio" name="pregunta9" value="mike" required> Mike</p>
+                            <p><input type="radio" name="pregunta9" value="handunit" required> HandUnit </p>
+                            <p><input type="radio" name="pregunta9" value="baby" required> Baby </p>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+            10. Quienes son los Salvaged de FNAF6?
+                </div>
+                <div class="card-body">
+                    <p><input type="radio" name="pregunta10" value="springtrap, funtime freddy, helpy, Rockstar freddy" required> Springtrap, Funtime Freddy, Helpy, Rockstar Freddy </p>
+                    <p><input type="radio" name="pregunta10" value="molten freddy, scraptrap, scrapbaby, lefty" required> Molten Freddy, Scraptrap, Scrapbaby, Lefty </p>
+                    <p><input type="radio" name="pregunta10" value="scraptrap, molten freddy, scrapbaby, helpy" required> Scraptrap, Molten Freddy, Scrapbaby, helpy </p>
+                </div>
+            </div>
+            <br><input type="submit" class="btn btn-primary" value="Terminar examen">
+            <var sonido = new audio();, sonido.src = nariz.mp></var>
+        </form>
+    </div><br><br>
+    
+</body>
+</html>
