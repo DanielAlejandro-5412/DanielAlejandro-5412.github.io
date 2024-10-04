@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+8<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .gri{
-            position: fixed;
-            top: 50%;
-            height: 10vw;
-            left: 50%;
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            transform: translate(-50%,-50%);
-        }
-    </style>
+    <title>Práctiva 7. JavaScript</title>
+    <script> src="practica7.js" </script>
 </head>
+<style>
+    input{
+        font-size: 60px;
+        max-width: 60px;
+    }
+</style>
 <body>
-    <center><h1 id="testo">Un juego del Gateto</h1></center> 
-    <div class="gri">
-        <input type="text" onkeyup="check(1)" id="c1">
-        <input type="text" onkeyup="check(2)" id="c2">
-        <input type="text" onkeyup="check(3)" id="c3">
-        <input type="text" onkeyup="check(4)" id="c4">
-        <input type="text" onkeyup="check(5)" id="c5">
-        <input type="text" onkeyup="check(6)" id="c6">
-        <input type="text" onkeyup="check(7)" id="c7">
-        <input type="text" onkeyup="check(8)" id="c8">
-        <input type="text" onkeyup="check(9)" id="c9">
-    </div>
-<script src="practica7.js"></script>
+    <h1>Práctica #7 JavaScript</h1>
+
+    <input type="text" onkeyup="validar(1)" id="cuadro1">
+    <input type="text" onkeyup="validar(2)" id="cuadro2">
+    <input type="text" onkeyup="validar(3)" id="cuadro3"><br>
+
+    <input type="text" onkeyup="validar(4)" id="cuadro4">
+    <input type="text" onkeyup="validar(5)" id="cuadro5">
+    <input type="text" onkeyup="validar(6)" id="cuadro6"><br>
+
+    <input type="text" onkeyup="validar(7)" id="cuadro7">
+    <input type="text" onkeyup="validar(8)" id="cuadro8">
+    <input type="text" onkeyup="validar(9)" id="cuadro9"><br>
+
+    <h1 id="ganador"></h1>
+
+    <button onclick="reiniciar()">REINICIAR JUEGO</button>
+
+    <h2>López Martínez Daniel Alejandro</h2>
 </body>
 </html>
