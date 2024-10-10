@@ -6,12 +6,12 @@ $(document).ready(function(){
         while(b){
                var num = Math.floor(Math.random()*54) + 1;
                console.log("Numero de cartas"+num);
-            if(cartas[b-1] == true){
+            if(cartas[num-1] == true){
                 continue;
 
             } else{
                 $("#carta_activa").html("<img src='loteria/"+num+".jpg'>")
-                cartas[b-1] = true;
+                cartas[num-1] = true;
                 b=false;
                 cont++;
             }
