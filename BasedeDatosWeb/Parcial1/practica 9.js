@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    cartas = new Array(54).fill(false);
+    let cartas = new Array(54).fill(false);
+    var cont = 0;
+    var n_carta = 0;
     $("#dar_carta").click(function(){
         var b = true;
         var cont = 0;
